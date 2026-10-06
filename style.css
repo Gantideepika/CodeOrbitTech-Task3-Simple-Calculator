@@ -1,0 +1,231 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: Arial, sans-serif;
+  background: #eef2f7;
+}
+
+.calculator {
+  width: min(92vw, 360px);
+  background: #172033;
+  padding: 22px;
+  border-radius: 22px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  color: white;
+  font-size: 1.2rem;
+  margin: 0 0 15px;
+}
+
+/* Calculator Display */
+#display {
+  width: 100%;
+  height: 75px;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: right;
+  font-size: 2rem;
+  background: #f8fafc;
+  color: #172033;
+  margin-bottom: 15px;
+}
+
+/* Calculator Buttons Grid */
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* All Buttons */
+button {
+  min-height: 58px;
+  border: 0;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  cursor: pointer;
+  background: #eef2f7;
+  color: #172033;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Operators */
+.operator,
+.equals {
+  background: #4f70d8;
+  color: white;
+}
+
+/* Clear Button */
+.danger {
+  background: #f0a7a7;
+  color: #172033;
+}
+
+/* Zero Button */
+.zero {
+  grid-column: span 2;
+}
+
+/* Error Message */
+.message {
+  min-height: 20px;
+  color: #ffb4b4;
+  text-align: center;
+  font-size: 0.85rem;
+  margin: 10px 0 0;
+}
+
+
+/* =========================
+   HISTORY BUTTON
+   ========================= */
+
+.history-btn {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 12px;
+
+  background: #34415f;
+  color: white;
+
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.history-btn:hover {
+  background: #405071;
+}
+
+
+/* =========================
+   HISTORY PANEL
+   ========================= */
+
+.history {
+  display: none;
+  margin-top: 12px;
+  padding: 15px;
+
+  background: #f8fafc;
+  border-radius: 14px;
+
+  border: 1px solid #dfe4ec;
+}
+
+.history.show {
+  display: block;
+}
+
+/* History Heading */
+.history h2 {
+  margin: 0 0 12px;
+
+  color: #172033;
+  font-size: 1rem;
+  text-align: center;
+}
+
+
+/* Individual History Item */
+.history-item {
+  padding: 10px;
+  margin-bottom: 8px;
+
+  background: #eef2f7;
+  color: #172033;
+
+  border-radius: 8px;
+  border: 1px solid #e1e6ee;
+
+  font-size: 0.9rem;
+}
+
+
+/* No History Message */
+#historyList p {
+  margin: 8px 0;
+  text-align: center;
+
+  color: #667085;
+  font-size: 0.85rem;
+}
+
+
+/* Clear History Button */
+#clearHistory {
+  width: 100%;
+  min-height: 42px;
+
+  margin-top: 5px;
+
+  background: #e2e6ee;
+  color: #172033;
+
+  font-size: 0.9rem;
+}
+
+#clearHistory:hover {
+  background: #d5dbe5;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+   ========================= */
+
+@media (max-width: 400px) {
+
+  .calculator {
+    width: 94vw;
+    padding: 18px;
+  }
+
+  #display {
+  width: 100%;
+  height: 75px;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: right;
+  font-size: 2rem;
+  background: #f8fafc;
+  color: #172033;
+  margin-bottom: 15px;
+
+  /* Prevent long numbers from breaking the layout */
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+  .keys {
+    gap: 8px;
+  }
+
+  button {
+    min-height: 54px;
+    font-size: 1.05rem;
+  }
+
+  .history {
+    padding: 12px;
+  }
+}
